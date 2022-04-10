@@ -1,0 +1,28 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+    
+    public static int biaya(int saldo, int setoran){
+        int jumlah = saldo + setoran;
+        int jumlah2 = jumlah - 7000;
+        return jumlah2;
+    }
+    
+    public static double biaya2(double jumlah2){
+        double a = jumlah2;
+        double b = a*0.0005;
+        return b;
+    }
+    
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int saldo = input.nextInt();
+        int setoran = input.nextInt();
+        int x = biaya(saldo,setoran);
+        double y = biaya2(x);
+        
+        System.out.println(x+y);
+        
+    }
+}
