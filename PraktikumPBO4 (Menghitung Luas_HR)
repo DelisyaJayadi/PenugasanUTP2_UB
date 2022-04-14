@@ -1,0 +1,51 @@
+import java.io.*;
+import java.util.*;
+
+class Kotak{
+    public double luasPersegi(double sisi){
+        return sisi*sisi;
+    }
+}
+
+class Segitigas{
+    public double luasSegitiga(double alas, double tinggi){
+        return ((alas*tinggi)/2);   
+    }
+}
+
+class Bundar{
+    private static final double phi2 = 3.14;
+    private static final double phi1 = 22/7;
+    public double luasLingkaran(double jari){
+        if(jari % 7 == 0){
+            return (jari*jari*phi1);
+        } else {
+            return (int)(jari*jari*phi2);
+        }
+    }
+}
+
+public class Solution {
+    private static final Scanner input = new Scanner (System.in);
+    
+    public static void main(String[] args) {
+        int pilihan = input.nextInt();
+        
+        if(pilihan ==1){
+            Kotak persegi = new Kotak();
+            double sisi = input.nextDouble();
+            System.out.println((int)persegi.luasPersegi(sisi));
+        } else if (pilihan ==2){
+            Segitigas segitiga = new Segitigas();
+            double alas = input.nextDouble();
+            double tinggi = input.nextDouble();
+            System.out.println((int)segitiga.luasSegitiga(alas, tinggi));
+        } else if (pilihan ==3){
+            Bundar lingkaran = new Bundar();
+            double jari = input.nextDouble();
+            System.out.println(lingkaran.luasLingkaran(jari));
+        } else {
+            System.out.println("Input yang anda masukan tidak sesuai");
+        }
+    }
+}
